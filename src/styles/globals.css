@@ -1,0 +1,87 @@
+/* ─── Reset ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Root ─── */
+html {
+  font-size: 112.5%; /* 18 px base */
+  scroll-behavior: smooth;
+  background-color: var(--color-surface-base);
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--text-size-sm);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-base);
+  min-height: 100vh;
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Typography ─── */
+h1 {
+  font-size: var(--text-size-2xl);
+  font-weight: 700;
+  line-height: var(--line-height-tight);
+}
+h2 {
+  font-size: var(--text-size-xl);
+  font-weight: 700;
+  line-height: var(--line-height-tight);
+}
+h3 {
+  font-size: var(--text-size-lg);
+  font-weight: 700;
+  line-height: var(--line-height-tight);
+}
+
+p {
+  line-height: var(--line-height-loose);
+}
+
+/* ─── Links ─── */
+a {
+  color: var(--color-accent-blue);
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+
+/* ─── Focus ─── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: var(--border-width-focus) solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* ─── Media ─── */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─── Utilities ─── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+

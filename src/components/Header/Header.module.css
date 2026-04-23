@@ -1,0 +1,28 @@
+/* ─── Header — simple title bar (no tab navigation) ─── */
+
+.header {
+  background-color: var(--color-surface-card);
+  border-bottom: var(--border-width-thin) solid var(--color-border-default);
+}
+
+.headerInner {
+  margin: 0;
+  padding: var(--space-sm) var(--space-xl);
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+}
+
+.title {
+  font-size: var(--text-size-md);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ─── Mobile overrides ─── */
+@media (max-width: 599px) {
+  .headerInner {
+    padding: var(--space-sm) var(--space-md);
+  }
+}

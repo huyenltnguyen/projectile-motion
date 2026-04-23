@@ -1,0 +1,77 @@
+.container {
+  padding: var(--space-lg);
+  background-color: var(--color-surface-card);
+  border: var(--border-width-thin) solid var(--color-border-default);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.formulaBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  align-items: center;
+  text-align: center;
+}
+
+.unit {
+  font-size: var(--text-size-md);
+  color: var(--color-text-muted);
+}
+
+.blue {
+  color: var(--color-accent-blue);
+  font-weight: 700;
+}
+
+.green {
+  color: var(--color-accent-green);
+  font-weight: 700;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-border-default);
+}
+
+@media (max-width: 599px) {
+  .container {
+    padding: var(--space-md);
+  }
+}
+
+/* Math fraction rendering */
+.mathExpr {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  line-height: 1;
+  font-size: var(--text-size-md);
+}
+
+.frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  gap: 1px;
+}
+
+.numer {
+  border-bottom: 1.5px solid var(--color-text-muted);
+  padding: 0 0.2em 2px;
+  font-size: 1em;
+}
+
+.denom {
+  padding: 2px 0.2em 0;
+  font-size: 0.9em;
+}
+
+.resultValue {
+  font-size: var(--text-size-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}

@@ -1,0 +1,266 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface-base);
+}
+
+.main {
+  flex: 1;
+  padding: var(--space-xl) var(--space-xl);
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ─── Two-column grid: main area + side panel ─── */
+.contentGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.mainArea {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  min-width: 0;
+}
+
+@media (min-width: 900px) {
+  .contentGrid {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-2xl);
+  }
+
+  .mainArea {
+    flex: 2;
+  }
+
+  .sidePanel {
+    flex: 1;
+    position: sticky;
+    top: var(--space-lg);
+  }
+}
+
+.sidePanel {
+  background-color: var(--color-surface-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Formula row (sidebar header) ─── */
+.formulaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.formulaDisplay {
+  font-family: var(--font-family-sans);
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.formulaVar {
+  display: inline-block;
+}
+
+.formulaAccentBlue {
+  color: var(--color-accent-blue);
+}
+
+.formulaAccentGreen {
+  color: var(--color-accent-green);
+}
+
+/* ─── Info icon button ─── */
+.infoIconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: var(--color-surface-raised);
+  border: var(--border-width-thin) solid var(--color-border-default);
+  border-radius: var(--border-radius-md);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+
+.infoIconBtn:hover {
+  background: var(--color-border-default);
+  border-color: var(--color-border-strong);
+}
+
+.infoIconBtn:focus-visible {
+  outline: var(--border-width-focus) solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.infoIconBtn[aria-expanded='true'] {
+  color: var(--color-accent-blue);
+  border-color: var(--color-accent-blue);
+  background: var(--color-surface-raised);
+}
+
+/* ─── Simulation area ─── */
+.simulationArea {
+  width: 100%;
+}
+
+.canvasWrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* ─── Button group — top-right of canvas ─── */
+.buttonGroup {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  display: flex;
+  gap: var(--space-xs);
+  z-index: 10;
+}
+
+/* ─── Play/Pause button — icon only ─── */
+.playPauseBtn {
+  background: var(--color-surface-raised);
+  border: var(--border-width-thin) solid var(--color-border-default);
+  color: var(--color-text-primary);
+  font-size: 1.1rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: var(--border-radius-md);
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+/* ─── Clear ghost trails button ─── */
+.clearBtn {
+  background: var(--color-surface-raised);
+  border: var(--border-width-thin) solid var(--color-border-default);
+  color: var(--color-text-primary);
+  font-size: 1.1rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: var(--border-radius-md);
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.clearBtn:hover:not(:disabled) {
+  background: var(--color-border-default);
+  border-color: var(--color-border-strong);
+}
+
+.clearBtn:focus-visible {
+  outline: var(--border-width-focus) solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.clearBtn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.playPauseBtn:hover {
+  background: var(--color-border-default);
+  border-color: var(--color-border-strong);
+}
+
+.playPauseBtn:focus-visible {
+  outline: var(--border-width-focus) solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* ─── Controls ─── */
+.controlsArea {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 600px) {
+  .sliders {
+    flex-direction: row;
+    gap: var(--space-xl);
+  }
+  .sliders > * {
+    flex: 1;
+  }
+}
+
+/* ─── Mobile overrides ─── */
+@media (max-width: 599px) {
+  .main {
+    padding: var(--space-md);
+  }
+
+  .contentGrid {
+    gap: var(--space-md);
+  }
+
+  .mainArea {
+    gap: var(--space-md);
+  }
+
+  .controlsArea {
+    gap: var(--space-md);
+  }
+
+  .sidePanel {
+    padding: var(--space-sm);
+  }
+}
+
+/* ─── Sidebar formula fraction layout ─── */
+.formulaMathExpr {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  vertical-align: middle;
+}
+
+.formulaFrac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  vertical-align: middle;
+}
+
+.formulaNumer {
+  border-bottom: 1.5px solid var(--color-text-primary);
+  padding: 0 0.2em 2px;
+  font-size: 0.85em;
+}
+
+.formulaDenom {
+  padding: 2px 0.2em 0;
+  font-size: 0.85em;
+}
